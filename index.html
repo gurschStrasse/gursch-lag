@@ -2,111 +2,180 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <title>Lag (2026:123) om Gursch</title>
+    <title>Gurschbalken (2026:123)</title>
     <style>
-        /* Grundinställningar - Tvingar fram färger */
-        html, body {
-            background-color: #000000 !important;
-            color: #ffffff !important;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Den vita menyn högst upp */
-        .header-white {
-            background: #ffffff;
-            color: #000000;
-            padding: 10px 20px;
-            font-size: 12px;
-            font-weight: bold;
-            border-bottom: 1px solid #444;
-        }
-
-        /* Layout-behållare */
-        .main-grid {
+        /* Grundinställningar - Lagen.nu brutalism */
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background-color: #000; 
+            color: #eee;
             display: flex;
-            min-height: 100vh;
         }
 
         /* Vänstermeny */
-        .nav-left {
-            width: 220px;
-            padding: 20px;
+        .sidebar {
+            width: 240px;
+            position: fixed;
+            height: 100vh;
+            background: #000;
             border-right: 1px solid #222;
+            padding: 20px;
+            font-size: 11px;
+            overflow-y: auto;
         }
-        .nav-left a {
-            display: block;
-            color: #888888;
-            text-decoration: none;
-            font-size: 12px;
-            margin-bottom: 10px;
+        .sidebar h2 { font-size: 13px; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+        .sidebar a { display: block; color: #888; text-decoration: none; margin-bottom: 8px; }
+        .sidebar a:hover { color: #fff; }
+
+        /* Huvudinnehåll */
+        .main-content {
+            margin-left: 280px; /* Ger plats åt menyn */
+            margin-right: auto;
+            max-width: 800px;
+            padding: 40px;
+            border-left: 1px solid #222;
+            background: #000;
         }
 
-        /* MITTEN - Din text */
-        .article-body {
-            flex: 1; /* Tar upp allt ledigt utrymme */
-            padding: 40px;
-            max-width: 700px;
-        }
+        /* Topp-info */
+        h1 { font-size: 26px; color: #fff; margin-bottom: 5px; }
+        .abbr { color: #666; font-size: 14px; margin-bottom: 30px; }
+        .meta { font-size: 12px; color: #888; margin-bottom: 20px; line-height: 1.6; }
+        .meta b { color: #aaa; width: 100px; display: inline-block; }
 
         /* Gula boxen */
         .yellow-box {
             background: #fff9c4;
-            color: #000000;
+            color: #000;
+            padding: 15px;
+            font-size: 13px;
+            margin-bottom: 30px;
+            border-radius: 2px;
+            line-height: 1.4;
+        }
+
+        /* Kapitel och Paragrafer */
+        h2.kapitel-rubrik { 
+            border-top: 1px solid #333; 
+            padding-top: 30px; 
+            margin-top: 50px; 
+            color: #fff; 
+            font-size: 20px;
+        }
+        .paragraf { margin-bottom: 25px; line-height: 1.7; }
+        .paragraf-nr { font-weight: bold; color: #fff; margin-right: 10px; }
+        .stycke { display: block; margin-top: 10px; margin-left: 35px; color: #bbb; }
+
+        /* Allmänna principer box */
+        .principer {
+            border: 1px solid #444;
             padding: 15px;
             margin-bottom: 30px;
+            font-style: italic;
             font-size: 13px;
-        }
-
-        /* Textstyling */
-        h1 { font-size: 28px; margin: 0; }
-        .abbr { color: #666; margin-bottom: 20px; }
-        h3 { border-top: 1px solid #333; padding-top: 20px; margin-top: 40px; }
-        .nr { font-weight: bold; margin-right: 5px; }
-        .paragraf { margin-bottom: 20px; color: #cccccc; }
-
-        /* Högerkolumn */
-        .aside-right {
-            width: 280px;
-            padding: 20px;
-        }
-        .box {
-            border: 1px solid #333;
-            background: #111;
-            padding: 10px;
-            font-size: 11px;
-            color: #448aff;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
 
-    <div class="header-white">
-        lagen.nu &nbsp;&nbsp; Lagar &nbsp;&nbsp; Rättsfall
+    <div class="sidebar">
+        <h2>Innehållsförteckning</h2>
+        <a href="#allman">Allmänna principer</a>
+        <a href="#kap1">1 kap. Inledande bestämmelser</a>
+        <a href="#kap2">2 kap. Spelets utformning</a>
+        <a href="#kap3">3 kap. Mini-game</a>
     </div>
 
-    <div class="main-grid">
-        <div class="nav-left">
-            <a href="#kap1">1 kap. Inledning</a>
-            <a href="#kap2">2 kap. Byten</a>
-            <a href="#kap3">3 kap. Spelets gång</a>
-            <a href="#kap4">4 kap. Särskilda bestämmelser</a>
+    <div class="main-content">
+        <h1>Gurschbalk (2026:123)</h1>
+        <div class="abbr">Förkortning: GB</div>
+
+        <div class="meta">
+            <b>Departement</b> Juridiska Fakulteten, Lunds Universitet<br>
+            <b>Utfärdad</b> 2026-02-08<br>
+            <b>Ikraft</b> Omedelbart
         </div>
 
-        <div class="article-body">
-            <h1>Lag (2026:123) om Gursch</h1>
-            <div class="abbr">(LOG)</div>
+        <div class="yellow-box">
+            <b>Notis:</b> Denna balk ersätter samtliga tidigare muntliga överenskommelser. Vid spel på "Västgöta" eller "Lunds" äger GB företräde.
+        </div>
 
-            <div class="yellow-box">
-                <b>Notis:</b> Texten har justerats efter de senaste förhandlingarna i köket: Korrigerat värde för Willys-kort.
-            </div>
+        <h2 id="allman" class="kapitel-rubrik">Allmänna principer</h2>
+        <div class="principer">
+            • <b>Den som ger sig in i leken, leken tåla</b> (återfinns i 2 §)<br>
+            • <b>Acta fabula est, plaudite</b> – Om en spelare vill lämna spelet måste denne informera om sin avsikt och spela 3 avslutande rundor.<br>
+            • <b>Ad infernos (till dödsriket)</b> – Minoritetsregel för att få höja insatsen.
+        </div>
 
-            <h3 id="kap1">1 kap. Spelets inledning</h3>
-            <div class="paragraf">
-                <span class="nr">1 §</span> Varje deltagare tilldelas fyra (4) stängda kort och ett öppet (1). Den med högst öppet kort inleder. Spelet fortlöper medsols.
-            </div>
+        <h2 id="kap1" class="kapitel-rubrik">1 kap. Inledande bestämmelser</h2>
+        
+        <div class="paragraf">
+            <span class="paragraf-nr">1 §</span> Gurschbalken (GB) är tillämplig vid ett parti gursch med 2 eller fler deltagare varav samtliga från Juristprogrammet på Lunds universitet.
+            <span class="stycke">Vid spel med utomstående ska reglerna i denna balk tillämpas ifall de övriga spelarna informerats om detta samt att majoriteten av spelarna går på Juristprogrammet på Lunds universitet.</span>
+        </div>
 
-            <h3 id="kap2">2 kap. Byten</h3>
-            <div class="paragraf">
-                <span class="nr">1 §</span> Den inledande spelaren väljer antalet kort att sl
+        <div class="paragraf">
+            <span class="paragraf-nr">2 §</span> Lagen är primär och vad som stadgas i andra lagar gäller ej vid tillämpning av denna balk om inte annat avtalats eller föreskrivs i brottsbalken.
+        </div>
+
+        <div class="paragraf">
+            <span class="paragraf-nr">3 §</span> Definitioner:
+            <span class="stycke"><b>Flopp:</b> Är det sista kortet som tilldelas var och en i partiet och kortet ska vara synligt för alla.</span>
+            <span class="stycke"><b>Sak:</b> När man tvingas lägga sitt lägsta kort som svar.</span>
+            <span class="stycke"><b>Slask:</b> När en spelare byter samtliga kort på handen utan att ha vunnit floppen.</span>
+            <span class="stycke"><b>Kask:</b> Samma definition som slask.</span>
+            <span class="stycke"><b>Doffel:</b> När två kort av samma värde eller en sjua spelas tillsammans.</span>
+            <span class="stycke"><b>Triffel:</b> När tre kort av samma värde eller sjua spelas tillsammans.</span>
+            <span class="stycke"><b>Fyrpel:</b> När fyra kort av samma värde eller sjua spelas tillsammans.</span>
+            <span class="stycke"><b>Fempel:</b> När fem kort av samma värde eller sjua spelas tillsammans.</span>
+        </div>
+
+        <h2 id="kap2" class="kapitel-rubrik">2 kap. Spelets utformning</h2>
+
+        <div class="paragraf">
+            <span class="paragraf-nr">1 §</span> Vinner gör den som går ut på det lägsta värdet.
+            <span class="stycke">Vid utfallet att två eller fler spelare går ut på samma lägsta värde ska ett mini-game avgöra vem av dem som vinner.</span>
+        </div>
+
+        <div class="paragraf">
+            <span class="paragraf-nr">2 §</span> Förlorar gör den eller de som går ut på det högsta värdet.
+            <span class="stycke">Om avtalat ska ett mini-game avgöra vem som förlorar vid utfallet att 2 eller flera spelare går ut på samma lägsta värde.</span>
+        </div>
+
+        <div class="paragraf">
+            <span class="paragraf-nr">3 §</span> Varje spelare ska tilldelas 5 kort. Varje kort ska givas stängt och det sista kortet ska givas öppen för samtliga spelare att ta del av.
+            <span class="stycke">Om ett stängt kort blir visuellt för majoriteten spelare i partiet och felet inte går att härleda till mottagaren, får mottagaren begära ett nytt kort av dealern. Mottagaren har även möjlighet att välja att kortet ska gälla som sitt öppna kort.</span>
+        </div>
+
+        <div class="paragraf">
+            <span class="paragraf-nr">4 §</span> Spelaren med högst värde på sitt öppna kort har vunnit floppen. Floppvinnaren bestämmer om och hur många kort varje spelare får möjlighet att byta i sin tilldelade hand.
+            <span class="stycke">Vad som sägs i första stycket har inte betydelse för en spelare med samtliga kort under knekt (slask). Den som väljer att slaska tilldelas fem nya stängda kort.</span>
+            <span class="stycke">Vad som sägs i första stycket har inte betydelse för en spelare med samtliga kort mellan kung och knekt (kask). Den som väljer att kaska tilldelas fem nya öppna kort, denne kan välja om den vill acceptera de fem öppna eller begära fem stängda kort.</span>
+            <span class="stycke">Vad som sägs i andra och tredje stycket blir endast tillämpligt om spelaren inte har bytt några kort tidigare under rundan och ifall rundan inte har påbörjats genom att floppvinnaren spelat ett eller flera kort.</span>
+        </div>
+
+        <div class="paragraf">
+            <span class="paragraf-nr">5 §</span> Om spelaren enligt 4 § beslutar att byta kort påbörjas rundan efter att samtliga spelare getts möjlighet att byta enligt 4 § 1-3 st. Om spelaren beslutar att inte byta några kort inleds rundan direkt med undantag för vad som föreskrivs i 4 § 2-3 st.
+            <span class="stycke">Vad som sägs i första stycket första meningen är inte tillämpligt ifall spelarna på förhand har avtalat om att byten i flera omgångar ska ske.</span>
+            <span class="stycke">Om floppvinnaren påbörjat rundan utan att övriga spelare fått möjlighet att slaska eller kaska enligt 4 § 2 och 3 st har de rätt att byta sina kort ifall de anses som skäligt med hänsyn till tiden de fått på sig att byta sina kort...</span>
+        </div>
+
+        <div class="paragraf">
+            <span class="paragraf-nr">6 §</span> Vid byte av tre eller fler kort ska samtliga kort ges stängt med undantag för vad som föreskrivs i 4 § 3 st.
+            <span class="stycke">Vid byte av två eller ett kort ska korten delas öppet med möjlighet för samtliga spelare att se korten. Spelaren får välja att inte ta de öppna korten som erbjudits och ska isåfall tilldelas stängda kort i motsvarande antal.</span>
+            <span class="stycke">Om varje spelare inte kan få rätt antal kort på grund av att korten inte räcker till, ska spelaren erhålla de kort som finns kvar av leken. De resterande korten ska erhållas från högen med slängda kort.</span>
+        </div>
+
+        <h2 id="kap3" class="kapitel-rubrik">3 kap. Mini-game</h2>
+        <div class="paragraf">
+            <span class="paragraf-nr">1 §</span> Vid utfall enligt 2 kap. 1 § 2 st eller 2 § 2 st ska ett Mini-game avgöra utfallet av rundan.
+            <span class="stycke">Varje spelare ska tilldelas 3 kort och bestämmelserna i 2 kap. 4 § 2-3 styckena äger ej tillämpning. (E contrario tolkning tillämpas).</span>
+        </div>
+
+        <div style="height: 500px;"></div>
+    </div>
+
+</body>
+</html>
