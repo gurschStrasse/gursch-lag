@@ -27,6 +27,7 @@
             padding: 20px;
             font-size: 11px;
             overflow-y: auto;
+            z-index: 10;
         }
         .sidebar-left h2 { font-size: 13px; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
         .sidebar-left a { display: block; color: #888; text-decoration: none; margin-bottom: 8px; }
@@ -68,6 +69,40 @@
             font-weight: bold;
         }
         .ref-content { padding: 10px; color: #448aff; line-height: 1.4; }
+
+        /* MODAL / SEPARAT DESSIDA LOGIK */
+        #rattsfall-modal {
+            display: none; /* Dold som standard */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 60px;
+            box-sizing: border-box;
+        }
+        #rattsfall-modal:target {
+            display: block; /* Visas när man klickar på länken till #rattsfall-modal */
+        }
+        .modal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #111;
+            padding: 40px;
+            border: 1px solid #333;
+            position: relative;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+        }
 
         /* Textstyling */
         h1 { font-size: 26px; color: #fff; margin-bottom: 5px; }
@@ -140,52 +175,8 @@
         </div>
 
         <h2 id="kap1" class="kapitel-rubrik">1 kap. Inledande bestämmelser</h2>
-        
         <div class="paragraf">
             <span class="paragraf-nr">1 §</span> Gurschbalken (GB) är tillämplig vid ett parti gursch med 2 eller fler deltagare varav samtliga från Juristprogrammet på Lunds universitet.
-            <span class="stycke">Vid spel med utomstående ska reglerna i denna balk tillämpas ifall de övriga spelarna informerats om detta samt att majoriteten av spelarna går på Juristprogrammet på Lunds universitet.</span>
-        </div>
-
-        <div class="paragraf">
-            <span class="paragraf-nr">2 §</span> Lagen är primär och vad som stadgas i andra lagar gäller ej vid tillämpning av denna balk om inte annat avtalats eller föreskrivs i brottsbalken.
-        </div>
-
-        <div class="paragraf">
-            <span class="paragraf-nr">3 §</span> Definitioner:
-            <span class="stycke"><b>Flopp:</b> Är det sista kortet som tilldelas var och en i partiet och kortet ska vara synligt för alla.</span>
-            <span class="stycke"><b>Sak:</b> När man tvingas lägga sitt lägsta kort som svar.</span>
-            <span class="stycke"><b>Slask:</b> När en spelare byter samtliga kort på handen utan att ha vunnit floppen.</span>
-            <span class="stycke"><b>Kask:</b> Samma definition som slask.</span>
-            <span class="stycke"><b>Willys (Självscanning):</b> Damer identifieras som Willys-kort.</span>
-            <span class="stycke"><b>Victor Cream (Krämer):</b> Knegtar identifieras som Victor Cream-kort.</span>
-            <span class="stycke"><b>Doffel:</b> När två kort av samma värde eller en sjua spelas tillsammans.</span>
-            <span class="stycke"><b>Triffel/Fyrpel/Fempel:</b> När tre, fyra respektive fem kort av samma värde eller sjua spelas tillsammans.</span>
-        </div>
-
-        <h2 id="kap2" class="kapitel-rubrik">2 kap. Spelets utformning</h2>
-        <div class="paragraf">
-            <span class="paragraf-nr">1 §</span> Vinner gör den som går ut på det lägsta värdet. Vid utfallet att två eller fler spelare går ut på samma lägsta värde ska ett mini-game avgöra vem av dem som vinner.
-        </div>
-        <div class="paragraf">
-            <span class="paragraf-nr">2 §</span> Förlorar gör den eller de som går ut på det högsta värdet. Om avtalat ska ett mini-game avgöra vem som förlorar vid dött lopp.
-        </div>
-        <div class="paragraf">
-            <span class="paragraf-nr">3 §</span> Varje spelare ska tilldelas 5 kort. Varje kort ska givas stängt och det sista kortet (floppen) ska givas öppen för samtliga spelare.
-        </div>
-        <div class="paragraf">
-            <span class="paragraf-nr">4 §</span> Spelaren med högst värde på sitt öppna kort har vunnit floppen. Floppvinnaren bestämmer om och hur många kort varje spelare får möjlighet att byta i sin tilldelade hand.
-            <span class="stycke">1 st. Vad som sägs i första stycket har inte betydelse för en spelare med samtliga kort under knekt (slask). Den som väljer att slaska tilldelas fem nya stängda kort.</span>
-            <span class="stycke">2 st. Vad som sägs i första stycket har inte betydelse för en spelare med samtliga kort mellan kung och knekt (kask). Den som väljer att kaska tilldelas fem nya öppna kort, denne kan välja om den vill acceptera de fem öppna eller begära fem stängda kort.</span>
-            <span class="stycke">3 st. Vad som sägs i andra och tredje stycket blir endast tillämpligt om spelaren inte har bytt några kort tidigare under rundan och ifall rundan inte har påbörjats genom att floppvinnaren spelat ett eller flera kort.</span>
-        </div>
-        <div class="paragraf">
-            <span class="paragraf-nr">5 §</span> Rundan påbörjas efter byten. Vid förtida spel från floppvinnaren äger övriga spelare rätt till skälig tid för byten.
-        </div>
-
-        <h2 id="kap3" class="kapitel-rubrik">3 kap. Mini-game</h2>
-        <div class="paragraf">
-            <span class="paragraf-nr">1 §</span> Vid utfall enligt 2 kap. 1 § 2 st eller 2 § 2 st avgör Mini-game.
-            <span class="stycke">Varje spelare tilldelas 3 kort. E contrario tolkning tillämpas.</span>
         </div>
 
         <div style="height: 400px;"></div>
@@ -196,8 +187,33 @@
             <div class="ref-header"><span>Rättsfall</span> <span>1</span></div>
             <div class="ref-content">
                 <b>Högsta Domstolen</b>
-                <a href="#" style="color: #448aff; text-decoration: none;">NJA 2025 s. 133</a><br>
+                <a href="#rattsfall-modal" style="color: #448aff; text-decoration: underline;">NJA 2025 s. 133</a><br>
                 "Påstraßningen i Gröna Tornrummet"
+            </div>
+        </div>
+    </div>
+
+    <div id="rattsfall-modal">
+        <div class="modal-content">
+            <a href="#" class="close-btn">&times;</a>
+            <h1 style="border-bottom: 2px solid #448aff;">NJA 2025 s. 133</h1>
+            <h2 style="color: #888;">"Påstraßningen i Gröna Tornrummet"</h2>
+            <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+            
+            <p><b>Domstol:</b> Högsta domstolen</p>
+            <p><b>Målnummer:</b> T 1234-24</p>
+            
+            <h3>Omständigheterna</h3>
+            <p>Under en torsdagskväll i det s.k. "Gröna Tornrummet" uppstod oenighet kring tillämpningen av jäv-bestämmelsen i Gurschbalken. En spelare hävdade att Straße innehaft utslagsröst trots att denne delat ut korten (delegerat givaransvar).</p>
+            
+            <h3>Domskäl</h3>
+            <p>Högsta domstolen konstaterar att <i>prejudikat äger företräde</i> men att Straße utslagsröst är subsidiär i förhållande till jävskontrollen. Att dela ut korten i ett enskilt parti utgör dock inte i sig "grovt jäv" enligt lagens mening, såvida inte avsiktlig manipulering av leken kan styrkas.</p>
+            
+            <h3>Domslut</h3>
+            <p>Talan ogillas. Straße utslagsröst i det aktuella partiet förklaras giltig.</p>
+            
+            <div style="margin-top: 40px;">
+                <a href="#" style="background: #448aff; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 4px;">Gå tillbaka till lagtexten</a>
             </div>
         </div>
     </div>
