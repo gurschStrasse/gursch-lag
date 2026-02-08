@@ -3,18 +3,17 @@
 <head>
     <title>Lag (2024:123) om Gursch</title>
     <style>
-        /* Grundinställningar */
-        html {
-            scroll-behavior: smooth; /* Gör skrollet mjukt */
-        }
+        /* Grundlayout */
         body { 
             font-family: Arial, sans-serif; 
             margin: 0; 
-            background: #000; 
-            color: #ccc;
+            background: #000; /* Svart bakgrund enligt bilden */
+            color: #eee;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Den vita toppmenyn */
+        /* Vit toppmeny */
         .top-nav {
             background: #fff;
             padding: 10px 20px;
@@ -22,178 +21,34 @@
             gap: 15px;
             border-bottom: 1px solid #444;
             font-size: 12px;
-            position: fixed; /* Låser toppmenyn */
+            position: sticky;
             top: 0;
-            width: 100%;
             z-index: 1000;
         }
-        .top-nav a { color: #666; text-decoration: none; font-weight: bold; }
-        .top-nav .search { margin-left: auto; border: 1px solid #ccc; padding: 2px 10px; color: #999; margin-right: 40px; }
+        .top-nav a { color: #333; text-decoration: none; font-weight: bold; }
+        .top-nav .search { margin-left: auto; border: 1px solid #ccc; padding: 2px 10px; color: #999; }
 
-        .main-layout { 
-            display: flex; 
-            width: 100%; 
-            margin-top: 40px; /* Ger plats för toppmenyn */
-        }
-
-        /* Vänstermeny (Kapitel) */
-        .sidebar-left {
-            width: 230px;
-            padding: 20px;
-            font-size: 11px;
-            color: #888;
-            position: fixed;
-            height: calc(100vh - 40px);
-            overflow-y: auto;
-            border-right: 1px solid #222;
-        }
-        .sidebar-left a { color: #888; text-decoration: none; display: block; margin-bottom: 8px; }
-        .sidebar-left a:hover { color: #fff; text-decoration: underline; }
-
-        /* Mitten - Dokumentet */
-        .document-container {
-            margin-left: 270px; /* Putta ut texten från vänstermenyn */
-            margin-right: 320px; /* Plats för högerkolumn */
-            background: #000;
-            padding: 40px;
-            min-height: 200vh; /* Så vi kan testa skrollet */
-        }
-
-        /* FIX FÖR SKROLL: Gör att rubriken inte hamnar bakom toppmenyn */
-        h3 { 
-            scroll-margin-top: 70px; 
-            font-size: 20px; 
-            color: #fff; 
-            border-top: 1px solid #333; 
-            padding-top: 20px; 
-            margin-top: 40px; 
-        }
-
-        h1 { font-size: 24px; color: #fff; margin-bottom: 5px; margin-top: 0; }
-        .abbr { color: #888; font-size: 14px; margin-bottom: 20px; }
-
-        /* Den gula infoboxen */
-        .info-box {
-            background: #fff9c4;
-            color: #333;
-            padding: 15px;
-            border-radius: 2px;
-            font-size: 13px;
-            margin: 20px 0;
-            line-height: 1.4;
-        }
-
-        .meta-data { font-size: 12px; color: #aaa; margin-bottom: 30px; line-height: 1.8; }
-        .meta-data b { color: #888; font-weight: normal; margin-right: 10px; display: inline-block; width: 80px; }
-        .meta-data a { color: #448aff; text-decoration: none; }
-
-        .paragraf { margin-bottom: 20px; font-size: 15px; color: #eee; }
-        .nr { font-weight: bold; color: #fff; margin-right: 5px; }
-
-        /* Högerkolumn */
-        .sidebar-right {
-            width: 280px;
-            padding: 20px;
-            position: fixed;
-            right: 0;
-            height: 100vh;
-        }
-        .ref-box {
-            border: 1px solid #333;
-            background: #0a0a0a;
-            margin-bottom: 20px;
-            font-size: 11px;
-        }
-        .ref-header {
-            background: #1a1a1a;
-            padding: 6px 10px;
-            border-bottom: 1px solid #333;
+        /* Huvudbehållare för att hålla isär menyerna */
+        .main-wrapper {
             display: flex;
             justify-content: space-between;
-            color: #eee;
+            width: 100%;
         }
-        .ref-content { padding: 10px; color: #448aff; line-height: 1.4; }
-    </style>
-</head>
-<body>
 
-    <div class="top-nav">
-        <a href="#">lagen.nu</a> 
-        <a href="#">Lagar</a> 
-        <a href="#">Rättsfall</a> 
-        <a href="#">Förarbeten</a>
-        <div class="search">Sök...</div>
-    </div>
+        /* Vänstermeny */
+        .sidebar-left {
+            width: 220px;
+            padding: 20px;
+            font-size: 12px;
+            position: sticky;
+            top: 40px;
+            height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+        .sidebar-left a { color: #888; text-decoration: none; display: block; margin-bottom: 10px; }
+        .sidebar-left a:hover { color: #fff; }
 
-    <div class="main-layout">
-        <div class="sidebar-left">
-            <a href="#kap1">1 kap. Spelets inledning</a>
-            <a href="#kap2">2 kap. Byten</a>
-            <a href="#kap3">3 kap. Spelets gång</a>
-            <a href="#kap4">4 kap. Särskilda bestämmelser</a>
-        </div>
-
-        <div class="document-container">
-            <h1>Lag (2024:123) om Gursch</h1>
-            <div class="abbr">(LOG)</div>
-
-            <div class="meta-data">
-                <b>Departement</b> Justitiedepartementet G1<br>
-                <b>Utfärdad</b> 2024-02-08<br>
-                <b>Ikraft</b> 2024-03-01<br>
-                <b>Källa</b> <a href="#">Gursch-kommitténs rättsdatabaser</a>
-            </div>
-
-            <div class="info-box">
-                <b>Notis:</b> Texten har ändrats jämfört med ursprungsmaterialet: Definitionen av "Victor Cream" har förtydligats i 3 kap. 2 §.
-            </div>
-
-            <h3 id="kap1">1 kap. Spelets inledning</h3>
-            <div class="paragraf">
-                <span class="nr">1 §</span> Varje deltagare tilldelas fyra (4) stängda kort och ett öppet (1). Den med högst öppet kort inleder. Spelet fortlöper medsols.
-            </div>
-
-            <h3 id="kap2">2 kap. Byten</h3>
-            <div class="paragraf">
-                <span class="nr">1 §</span> Den inledande spelaren väljer antalet kort att slänga. De andra spelarna kan följa exemplet eller välja att inte byta alls. 
-            </div>
-            <div class="paragraf">
-                <span class="nr">2 §</span> Spelarna kan efter det första bytet "enas" om ytterligare byten. Varje spelare innehar veto mot bytets genomförande. 
-            </div>
-
-            <h3 id="kap3">3 kap. Spelets gång</h3>
-            <div class="paragraf">
-                <span class="nr">1 §</span> Inledande spelaren lägger ett (1) kort. Efterföljande spelare måste lägga samma kort eller högre. Om spelaren inte kan måste den saka sitt lägsta kort. 
-            </div>
-            <div class="paragraf">
-                <span class="nr">2 §</span> Lägsta kort är två (2). Högsta kort är ess. Sjuan (7) är trumpf. Damer är Willys (Självscanning) och Knegtar är Victor Cream (Krämer). 
-            </div>
-            <div class="paragraf">
-                <span class="nr">3 §</span> Det sista sticket avgör summan som betalas ut samt vinnare. 
-            </div>
-
-            <h3 id="kap4">4 kap. Särskilda bestämmelser</h3>
-            <div class="paragraf">
-                <span class="nr">1 §</span> Vid tvist om regeltolkning äger prejudikat företräde, vid oenighet äger Straße utslagsröst såvida inte grovt jäv föreligger.
-            </div>
-        </div>
-
-        <div class="sidebar-right">
-            <div class="ref-box">
-                <div class="ref-header"><span>Lagrumshänvisningar hit</span> <span>12</span></div>
-                <div class="ref-content">
-                    1 kap. 1 § LOG<br>
-                    3 kap. 2 § LOG
-                </div>
-            </div>
-            <div class="ref-box">
-                <div class="ref-header"><span>Författningskommentar</span> <span>2</span></div>
-                <div class="ref-content" style="color: #666;">
-                    Prop. 2024/25:12: Paragrafen klargör att Sjuan trumfar Ess...
-                </div>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+        /* MITTEN - HÄR ÄR DIN TEXT */
+        .document-content {
+            flex: 1;
+            max-width: 700px
