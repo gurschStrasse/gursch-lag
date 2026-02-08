@@ -62,13 +62,13 @@
             font-size: 15px;
         }
 
-        /* VIDEO-CONTAINER (För 16:9 format) */
+        /* VIDEO-CONTAINER (Anpassad för stående format/mobilvideo) */
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 h-v förhållande */
+            padding-bottom: 177.78%; /* Anpassat för 9:16 format (stående) */
             height: 0;
             overflow: hidden;
-            margin-bottom: 25px;
+            margin-bottom: 40px;
             background: #111;
         }
         .video-wrapper iframe {
@@ -80,10 +80,13 @@
             border: 0;
         }
         .video-label {
-            font-size: 12px;
-            color: #888;
-            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 12px;
             display: block;
+            border-left: 3px solid #448aff;
+            padding-left: 10px;
         }
     </style>
 </head>
@@ -107,29 +110,35 @@
             
             <div class="post-content">
                 <p>Efter en intensiv turnering med publikrekord och oerhörd spänning kan vi nu stolt presentera resultatet från Gursch Master Januari 2026. Nedan följer tre exklusiva intervjuer från finalkvällen.</p>
-            <span class="video-label">Intervju 1: Vinnarens kommentar</span>
-            <div class="video-wrapper">
-                <iframe src="https://player.vimeo.com/video/1163081941?badge=0&autopause=0&player_id=0&app_id=58479"frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Vinnarintervju">
-        </iframe>    
-    </div>
                 
-                <span class="video-label">Intervju 1: Vinnarens kommentar</span>
+                <span class="video-label">Intervju 1: Vinnarintervju</span>
                 <div class="video-wrapper">
-                    <iframe src="https://vimeo.com/1163081941" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1163081941?badge=0&autopause=0&player_id=0&app_id=58479" 
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" title="Vinnarintervju">
+                    </iframe>
                 </div>
 
                 <span class="video-label">Intervju 2: EliGo blir till EliRedO för nästa månads mästerskap</span>
                 <div class="video-wrapper">
-                    <iframe src="https://vimeo.com/1163081887" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1163081887?badge=0&autopause=0&player_id=0&app_id=58479" 
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" title="Försteförlorarintervju">
+                    </iframe>
                 </div>
 
                 <span class="video-label">Intervju 3: Vinsten flög iväg från flygaren</span>
                 <div class="video-wrapper">
-                    <iframe src="https://vimeo.com/1163081918" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1163081918?badge=0&autopause=0&player_id=0&app_id=58479" 
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" title="Herbertointervju">
+                    </iframe>
                 </div>
             </div>
         </article>
 
     </div>
+    
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </body>
 </html>
