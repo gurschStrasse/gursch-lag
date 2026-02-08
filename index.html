@@ -1,97 +1,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lag (2026:123) om Gursch</title>
+    <title>Lag (2024:123) om Gursch</title>
     <style>
+        /* Grundinställningar */
         body { 
-            font-family: Georgia, serif; 
-            line-height: 1.6; 
+            font-family: Arial, sans-serif; 
             margin: 0; 
-            display: flex; 
-            background: #f4f4f4; 
+            background: #000; /* Svart bakgrund som på bilden */
+            color: #ccc;
+            display: flex;
+            flex-direction: column;
         }
-        
-        /* Menyn på vänster sida */
-        .sidebar {
+
+        /* Den svarta toppmenyn */
+        .top-nav {
+            background: #fff;
+            padding: 5px 20px;
+            display: flex;
+            gap: 15px;
+            border-bottom: 1px solid #444;
+            font-size: 12px;
+        }
+        .top-nav a { color: #666; text-decoration: none; }
+        .top-nav .search { margin-left: auto; border: 1px solid #ccc; padding: 2px 5px; color: #999; }
+
+        .main-layout { display: flex; width: 100%; }
+
+        /* Vänstermeny (Kapitel) */
+        .sidebar-left {
             width: 250px;
-            position: fixed; 
-            height: 100vh;
             padding: 20px;
-            background: #eee;
-            border-right: 1px solid #ccc;
+            font-size: 11px;
+            color: #888;
+            position: fixed;
+            height: 100vh;
             overflow-y: auto;
         }
+        .sidebar-left a { color: #888; text-decoration: none; display: block; margin-bottom: 5px; }
 
-        .sidebar h2 { font-family: Arial, sans-serif; font-size: 16px; }
-        .sidebar a { 
-            display: block; 
-            color: #0000EE; 
-            text-decoration: none; 
-            font-size: 14px; 
-            margin-bottom: 10px; 
-        }
-        .sidebar a:hover { text-decoration: underline; }
-
-        /* Själva lagtexten - Justerad för att ligga bredvid menyn */
-        .document { 
-            margin-left: 290px; /* Skapar utrymmet till höger om menyn */
-            padding: 40px; 
-            max-width: 700px;
-            background: white;
-            min-height: 100vh;
-            border-left: 1px solid #ccc;
+        /* Mitten - Dokumentet */
+        .document-container {
+            margin-left: 270px;
+            margin-right: 320px; /* Plats för högerkolumn */
+            background: #000;
+            padding: 40px;
+            flex-grow: 1;
         }
 
-        h1 { font-family: Arial, sans-serif; font-size: 24px; border-bottom: 2px solid #000; }
-        h3 { border-bottom: 1px solid #ddd; padding-top: 20px; }
-        .nr { font-weight: bold; }
+        h1 { font-size: 22px; color: #fff; margin-bottom: 5px; }
+        .abbr { color: #888; font-size: 14px; margin-bottom: 20px; }
+
+        /* Den gula infoboxen från bilden */
+        .info-box {
+            background: #fff9c4;
+            color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 13px;
+            margin: 20px 0;
+        }
+
+        .meta-data { font-size: 12px; color: #aaa; margin-bottom: 30px; }
+        .meta-data b { color: #fff; font-weight: normal; }
+        .meta-data a { color: #448aff; text-decoration: none; }
+
+        h3 { font-size: 20px; color: #fff; border-top: 1px solid #333; padding-top: 20px; margin-top: 40px; }
+        .paragraf { margin-bottom: 20px; font-size: 15px; color: #eee; }
+        .nr { font-weight: bold; color: #fff; margin-right: 5px; }
+
+        /* Högerkolumn (Referenser) */
+        .sidebar-right {
+            width: 300px;
+            padding: 20px;
+            position: fixed;
+            right: 0;
+        }
+        .ref-box {
+            border: 1px solid #444;
+            background: #111;
+            margin-bottom: 20px;
+            font-size: 11px;
+        }
+        .ref-header {
+            background: #222;
+            padding: 5px 10px;
+            border-bottom: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+        }
+        .ref-content { padding: 10px; color: #448aff; }
     </style>
 </head>
 <body>
 
-    <div class="sidebar">
-        <h2>Innehållsförteckning</h2>
-        <a href="#kap1">1 kap. Spelets inledning</a>
-        <a href="#kap2">2 kap. Byten</a>
-        <a href="#kap3">3 kap. Spelets gång</a>
-        <a href="#kap4">4 kap. Särskilda bestämmelser</a>
+    <div class="top-nav">
+        <a href="#">lagen.nu</a> <a href="#">Lagar</a> <a href="#">Rättsfall</a> <a href="#">Förarbeten</a>
+        <div class="search">Sök...</div>
     </div>
 
-    <div class="document">
-        <h1>Lag (2024:123) om Gursch</h1>
-        <p><i>Härvid föreskrivs följande regler för kortspelet Gursch.</i></p>
-
-        <h3 id="kap1">1 kap. Spelets inledning</h3>
-        <div class="paragraf">
-            <span class="nr">1 §</span> Varje deltagare tilldelas fyra (4) stängda kort och ett öppet (1). Den med högst öppet kort inleder. Spelet fortlöper medsols.
+    <div class="main-layout">
+        <div class="sidebar-left">
+            <a href="#kap1">1 kap. Spelets inledning</a>
+            <a href="#kap2">2 kap. Byten</a>
+            <a href="#kap3">3 kap. Spelets gång</a>
+            <a href="#kap4">4 kap. Särskilda bestämmelser</a>
         </div>
 
-        <h3 id="kap2">2 kap. Byten</h3>
-        <div class="paragraf">
-            <span class="nr">1 §</span> Den inledande spelaren väljer antalet kort att slänga. De andra spelarna kan följa exemplet eller välja att inte byta alls. 
-        </div>
-        <div class="paragraf">
-            <span class="nr">2 §</span> Spelarna kan efter det första bytet "enas" om ytterligare byten. Varje spelare innehar veto mot bytets genomförande. 
+        <div class="document-container">
+            <h1>Lag (2024:123) om Gursch</h1>
+            <div class="abbr">(LOG)</div>
+
+            <div class="meta-data">
+                <b>Departement</b> Gurschdepartementet L1<br>
+                <b>Utfärdad</b> 2024-02-08<br>
+                <b>Källa</b> <a href="#">Gursch-kommitténs rättsdatabaser</a>
+            </div>
+
+            <div class="info-box">
+                Texten har justerats efter de senaste förhandlingarna i köket: Korrigerat värde för Willys-kort.
+            </div>
+
+            <h3 id="kap1">1 kap. Spelets inledning</h3>
+            <div class="paragraf">
+                <span class="nr">1 §</span> Varje deltagare tilldelas fyra (4) stängda kort och ett öppet (1). Den med högst öppet kort inleder.
+            </div>
+
+            <h3 id="kap2">2 kap. Byten</h3>
+            <div class="paragraf">
+                <span class="nr">1 §</span> Den inledande spelaren väljer antalet kort att slänga.
+            </div>
+
+            <h3 id="kap3">3 kap. Spelets gång</h3>
+            <div class="paragraf">
+                <span class="nr">1 §</span> Inledande spelaren lägger ett (1) kort. Efterföljande spelare måste lägga samma kort eller högre.
+            </div>
+            <div class="paragraf">
+                <span class="nr">2 §</span> Sjuan (7) är trumpf. Damer är Willys och Knegtar är Victor Cream. 
+            </div>
         </div>
 
-        <h3 id="kap3">3 kap. Spelets gång</h3>
-        <div class="paragraf">
-            <span class="nr">1 §</span> Inledande spelaren lägger ett (1) kort. Efterföljande spelare måste lägga samma kort eller högre. Om spelaren inte kan måste den saka sitt lägsta kort. 
-        </div>
-        <div class="paragraf">
-            <span class="nr">2 §</span> Lägsta kort är två (2). Högsta kort är ess (ässena). Sjuan (7) är trumpf och kan således vara vilket kort du önskar. Damer är Willys (Självscanning) och Knegtar är Victor Cream (Krämer). 
-        </div>
-        <div class="paragraf">
-            <span class="nr">3 §</span> Det sista sticket avgör summan som betalas ut samt vinnare. Den med lägst kort vinner rundan och den/de med högst kort förlorar en summa motsvarande 3/5/10 gånger summan de går ut på. 
-        </div>
-
-        <h3 id="kap4">4 kap. Särskilda bestämmelser</h3>
-        <div class="paragraf">
-            <span class="nr">1 §</span> Vid tvist om regeltolkning äger prejudikat företräde, vid oenighet äger Straße utslagsröst såvida inte grovt jäv föreligger.
-        </div>
-        
-        <div style="height: 1000px;"></div> 
-    </div>
-
-</body>
-</html>
+        <div class="
