@@ -25,7 +25,7 @@
 
         .dashboard-header {
             display: flex;
-            align-items: center; /* Centrerar graferna vertikalt mot loggan */
+            align-items: center;
             justify-content: center;
             gap: 30px;
         }
@@ -37,22 +37,18 @@
             border-radius: 30px;
             border: 1px solid rgba(212, 175, 55, 0.2);
             box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            /* Tar bort de vita kanterna som syns i din bild */
             overflow: hidden; 
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Fixar scrollbars och croppning */
         .side-graph iframe {
             width: 100%;
             height: 380px;
-            border: none !important; /* Tvingar bort vit ram */
+            border: none !important;
             display: block;
             margin: 0 auto;
-            /* Försöker dölja Google Sheets interna scrollbar */
-            overflow: hidden;
         }
 
         .logo-center {
@@ -117,8 +113,8 @@
         <div class="dashboard-header">
             
             <div class="side-graph">
-                <div class="graph-title">🏅 Medaljfördelning</div>
-                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRB-UIe2ndJqYQao6L_7grvOkT5qcOnVf8GIBAbJ1x04S2Ti?oid=912595502&format=interactive" style="border:0;"></iframe>
+                <div class="graph-title">🥇 Medaljfördelning</div>
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRB-UIe2ndJqYQao6L_7grvOkT5qcOnVf8GIBAbJ1x04S2TiqRGu_cx_2LqHG78NppDac7waxoehDM6/pubchart?oid=912595502&format=interactive"></iframe>
             </div>
 
             <div class="logo-center">
@@ -127,7 +123,7 @@
 
             <div class="side-graph">
                 <div class="graph-title">📈 Poängutveckling</div>
-                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRB-UIe2ndJqYQao6L_7grvOkT5qcOnVf8GIBAbJ1x04S2Ti?oid=2080905604&format=interactive" style="border:0;"></iframe>
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRB-UIe2ndJqYQao6L_7grvOkT5qcOnVf8GIBAbJ1x04S2TiqRGu_cx_2LqHG78NppDac7waxoehDM6/pubchart?oid=2080905604&format=interactive"></iframe>
             </div>
 
         </div>
