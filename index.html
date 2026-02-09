@@ -2,95 +2,27 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunds Akademiska Gurschsällskap</title>
-    <style>
-        body { 
-            font-family: 'Times New Roman', serif; 
-            margin: 0; 
-            background-color: #050505; 
-            color: #eee;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
+    
+    <meta property="og:title" content="L.A.G.S.">
+    <meta property="og:description" content="Lunds Akademiska Gurschsällskap – Officiell hemsida.">
+    <meta property="og:image" content="logga.png">
 
-        .logo-container {
-            margin-bottom: 30px;
-        }
-
-        .main-logo {
-            width: 300px; /* Justera storleken här */
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(68, 138, 255, 0.2);
-        }
-
-        h1 { 
-            font-size: 32px; 
-            letter-spacing: 3px; 
-            margin-bottom: 5px; 
-            color: #fff;
-            text-transform: uppercase;
-        }
-
-        .sub-title { 
-            color: #888; 
-            font-size: 16px; 
-            margin-bottom: 40px; 
-            font-style: italic;
-            letter-spacing: 1px;
-        }
-
-        .nav-box {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .nav-button {
-            padding: 12px 25px;
-            border: 1px solid #333;
-            background: transparent;
-            color: #ccc;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.4s;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-button:hover {
-            background: #eee;
-            color: #000;
-            border-color: #eee;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-        }
-
-        .footer-note {
-            position: absolute;
-            bottom: 30px;
-            font-size: 11px;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-page">
 
     <div class="logo-container">
-        <img src="Logga.png" alt="Societas Academica Gursch Lundensis" class="main-logo">
+        <img src="logga.png" alt="Societas Academica Gursch Lundensis" class="main-logo">
     </div>
 
-    <h1>L. A. G. S.</h1>
+    <h1 class="home-title">L. A. G. S.</h1>
     <div class="sub-title">Lunds Akademiska Gurschsällskap</div>
     
     <div class="nav-box">
         <a href="balken.html" class="nav-button">Gurschbalken</a>
-        <a href="blogg.html" class="nav-button">Nyheter & Ranking</a>
+        <a href="blogg.html" class="nav-button">Nyheter & Blogg</a>
     </div>
 
     <div class="footer-note">
