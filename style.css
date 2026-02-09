@@ -1,17 +1,22 @@
 /* =========================================
-   GRUNDLÄGGANDE STIL (BAS)
+   1. GRUNDLÄGGANDE STIL (BAS)
    ========================================= */
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 80px; /* Så att rubriker inte hamnar bakom menyn */
+}
+
 body {
-    font-family: Arial, sans-serif; /* Standardtypsnitt för läsbarhet */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #000; /* Svart bakgrund */
-    color: #eee; /* Ljusgrå text för kontrast */
+    color: #eee; /* Ljusgrå text */
     line-height: 1.6;
 }
 
 a {
-    color: #448aff;
+    color: #448aff; /* Gursch-blå länkfärg */
     text-decoration: none;
 }
 
@@ -20,19 +25,23 @@ a:hover {
 }
 
 /* =========================================
-   NAVIGATION (Menyn högst upp)
+   2. NAVIGATION (Menyn högst upp)
    ========================================= */
 .top-bar {
     background: #ffffff;
-    padding: 12px 20px; /* Lite mindre padding på mobiler */
+    padding: 12px 20px;
     display: flex;
-    gap: 15px;
+    gap: 20px;
     border-bottom: 1px solid #ddd;
-    position: sticky;
+    position: sticky; /* Menyn fastnar i toppen */
     top: 0;
     z-index: 1000;
-    flex-wrap: wrap; /* Gör att menyn bryts snyggt på små skärmar */
-    justify-content: center; /* Centrera menyn */
+    flex-wrap: wrap;
+    justify-content: center; /* Centrerad meny på små skärmar */
+}
+
+@media (min-width: 700px) {
+    .top-bar { justify-content: flex-start; padding: 12px 40px; }
 }
 
 .top-bar a {
@@ -43,9 +52,7 @@ a:hover {
     text-transform: uppercase;
 }
 
-.top-bar a:hover {
-    color: #000;
-}
+.top-bar a:hover { color: #000; }
 
 .top-bar .active {
     color: #000;
@@ -54,30 +61,27 @@ a:hover {
 }
 
 /* =========================================
-   STARTSIDAN (index.html)
+   3. STARTSIDAN (index.html)
    ========================================= */
-/* Dessa klasser används bara på startsidan för att centrera allt */
 body.home-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
     background-color: #050505;
-    font-family: 'Times New Roman', serif; /* Akademisk känsla */
+    font-family: 'Times New Roman', serif;
 }
 
-.logo-container {
-    margin-bottom: 30px;
-}
+.logo-container { margin-bottom: 30px; margin-top: 60px; }
 
 .main-logo {
     width: 280px;
     height: auto;
-    max-width: 80%; /* För mobiler */
+    max-width: 80%;
     border-radius: 50%;
-    box-shadow: 0 0 25px rgba(68, 138, 255, 0.15); /* Svag blå glöd */
+    box-shadow: 0 0 25px rgba(68, 138, 255, 0.15);
 }
 
 .home-title {
@@ -96,47 +100,38 @@ body.home-page {
     letter-spacing: 1px;
 }
 
-.nav-box {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+.nav-box { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
 .nav-button {
     padding: 12px 25px;
     border: 1px solid #333;
     background: transparent;
     color: #ccc;
-    text-decoration: none;
     font-size: 14px;
     transition: 0.4s;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-family: Arial, sans-serif; /* Lättläst på knappar */
+    font-family: Arial, sans-serif;
 }
 
 .nav-button:hover {
     background: #eee;
     color: #000;
-    border-color: #eee;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     text-decoration: none;
 }
 
 .footer-note {
-    position: absolute;
-    bottom: 20px;
+    margin-top: 50px;
     font-size: 11px;
     color: #333;
     text-transform: uppercase;
     letter-spacing: 2px;
-    width: 100%;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* =========================================
-   INNEHÅLL (Blogg & Balken)
+   4. BLOGG & ALLMÄNT INNEHÅLL
    ========================================= */
 .container {
     max-width: 700px;
@@ -151,135 +146,117 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* Blogginlägg */
-.post {
-    margin-bottom: 60px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #222;
-}
+.post { margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid #222; }
+.post-title { color: #448aff; font-size: 24px; font-weight: bold; display: block; margin-bottom: 15px; }
+.post-date { color: #555; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; }
+.post-image { width: 100%; height: auto; margin: 25px 0; border: 1px solid #333; }
 
-.post-date {
-    color: #555;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 8px;
-}
-
-.post-title {
-    color: #448aff;
-    font-size: 24px;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.post-image {
-    width: 100%;
-    height: auto;
-    margin: 25px 0;
-    border: 1px solid #333;
-    display: block;
-}
+/* Rankingfärger */
+.rank-1 { color: #ffd700; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+.rank-2 { color: #c0c0c0; }
+.rank-3 { color: #cd7f32; }
 
 /* =========================================
-   RANKING LISTA (Guld, Silver, Brons)
+   5. LAGBOKEN (balken.html - Layout)
    ========================================= */
-.ranking-box {
-    background: #111;
-    border: 1px solid #333;
-    padding: 20px;
-    margin: 25px 0;
-    border-radius: 4px;
-}
-
-.ranking-title {
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
-    display: block;
-    border-bottom: 1px solid #222;
-    padding-bottom: 8px;
-}
-
-.ranking-list { list-style: none; padding: 0; margin: 0; }
-
-.ranking-item {
-    padding: 10px 0;
-    border-bottom: 1px solid #1a1a1a;
+.page-wrapper {
     display: flex;
-    align-items: center;
-    font-size: 15px;
-}
-
-.ranking-item:last-child { border-bottom: none; }
-
-.rank-num {
-    font-weight: bold;
-    margin-right: 15px;
-    width: 20px;
-    text-align: right;
-}
-
-.rank-1 { color: #ffd700; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); } /* Guld */
-.rank-2 { color: #c0c0c0; } /* Silver */
-.rank-3 { color: #cd7f32; } /* Brons */
-
-/* =========================================
-   VIDEO (Responsiv Vimeo/YouTube)
-   ========================================= */
-.video-wrapper {
+    justify-content: space-between;
     position: relative;
-    padding-bottom: 177.78%; /* 9:16 format (stående mobil) */
-    /* Använd 56.25% för liggande video (16:9) */
-    height: 0;
-    overflow: hidden;
-    margin-bottom: 40px;
-    background: #111;
-    border: 1px solid #222;
 }
 
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Vänster meny (Innehållsförteckning) */
+.sidebar-left {
+    width: 220px;
+    position: fixed;
+    top: 50px;
+    height: calc(100vh - 50px);
+    background: #000;
+    border-right: 1px solid #222;
+    padding: 20px;
+    font-size: 11px;
+    overflow-y: auto;
+    display: none; /* Dölj på mobil */
+}
+
+/* Höger meny (Rättsfall) */
+.sidebar-right {
+    width: 280px;
+    position: fixed;
+    right: 0;
+    top: 50px;
+    height: calc(100vh - 50px);
+    padding: 20px;
+    border-left: 1px solid #222;
+    background: #050505;
+    display: none; /* Dölj på mobil */
+    overflow-y: auto;
+}
+
+.sidebar-left h2 { font-size: 13px; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+.sidebar-left a { display: block; color: #888; margin-bottom: 8px; }
+.sidebar-left a:hover { color: #fff; text-decoration: underline; }
+
+/* Huvudinnehållet i mitten */
+.main-content {
     width: 100%;
-    height: 100%;
-    border: 0;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-.video-label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 10px;
-    display: block;
-    border-left: 3px solid #448aff;
-    padding-left: 10px;
-    margin-top: 30px;
+/* Media Queries: Visa sidomenyer när skärmen är stor nog */
+@media (min-width: 950px) {
+    .sidebar-left { display: block; }
+    .main-content { margin-left: 260px; margin-right: 20px; } /* Flytta texten åt höger */
+}
+
+@media (min-width: 1250px) {
+    .sidebar-right { display: block; }
+    .main-content { margin-right: 320px; } /* Gör plats för höger meny */
 }
 
 /* =========================================
-   MOBILANPASSNING
+   6. LAGTEXT STYLING (Detaljer)
    ========================================= */
-@media (max-width: 600px) {
-    .container {
-        margin-top: 20px;
-    }
-    
-    .top-bar {
-        gap: 10px;
-        padding: 10px;
-    }
-    
-    h1 { font-size: 24px; }
-    .post-title { font-size: 20px; }
-    
-    /* Justering för startsidan på små skärmar */
-    .home-title { font-size: 24px; letter-spacing: 1px; }
-    .sub-title { font-size: 14px; }
+.abbr { color: #666; font-size: 14px; margin-bottom: 30px; }
+
+.meta { font-size: 12px; color: #888; margin-bottom: 20px; }
+.meta b { color: #aaa; width: 100px; display: inline-block; }
+
+.yellow-box {
+    background: #fff9c4;
+    color: #000;
+    padding: 15px;
+    margin-bottom: 30px;
+    font-size: 13px;
+    border-left: 5px solid #f1c40f;
 }
+
+h2.kapitel-rubrik {
+    border-top: 1px solid #333;
+    padding-top: 30px;
+    margin-top: 50px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.paragraf { margin-bottom: 25px; line-height: 1.7; }
+.paragraf-nr { font-weight: bold; color: #fff; margin-right: 10px; }
+.stycke { display: block; margin-top: 10px; margin-left: 35px; color: #bbb; }
+
+.principer {
+    border: 1px solid #444;
+    padding: 15px;
+    margin-bottom: 30px;
+    font-style: italic;
+    font-size: 13px;
+    color: #aaa;
+    background: #080808;
+}
+
+/* Referensboxar */
+.ref-box { border: 1px solid #333; background: #111; margin-bottom: 20px; font-size: 11px; padding: 10px; }
+.ref-header { font-weight: bold; color: #fff; margin-bottom: 5px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+.ref-content { color: #bbb; line-height: 1.4; }
+.ref-content a { display: block; margin-top: 8px; font-weight: bold; }
