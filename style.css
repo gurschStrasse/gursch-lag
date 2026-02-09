@@ -1,6 +1,6 @@
-/* =========================================
+/* ==========================================================================
    1. GRUNDLÄGGANDE STIL (BAS)
-   ========================================= */
+   ========================================================================== */
 html { 
     scroll-behavior: smooth; 
     scroll-padding-top: 80px; 
@@ -15,18 +15,12 @@ body {
     line-height: 1.6;
 }
 
-a {
-    color: #448aff; 
-    text-decoration: none;
-}
+a { color: #448aff; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* =========================================
-   2. NAVIGATION
-   ========================================= */
+/* ==========================================================================
+   2. NAVIGATION (Gemensam för alla sidor)
+   ========================================================================== */
 .top-bar {
     background: #ffffff;
     padding: 12px 20px;
@@ -35,7 +29,7 @@ a:hover {
     border-bottom: 1px solid #ddd;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 9999; /* Alltid överst */
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -45,105 +39,97 @@ a:hover {
 }
 
 .top-bar a {
-    color: #666;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
+    color: #666; text-decoration: none; font-size: 14px; font-weight: 500; text-transform: uppercase;
 }
-
 .top-bar a:hover { color: #000; }
+.top-bar .active { color: #000; font-weight: bold; border-bottom: 2px solid #000; }
 
-.top-bar .active {
-    color: #000;
-    font-weight: bold;
-    border-bottom: 2px solid #000;
-}
-
-/* =========================================
+/* ==========================================================================
    3. STARTSIDAN (index.html)
-   ========================================= */
+   ========================================================================== */
 body.home-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
     justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-    background-color: #050505;
+    min-height: 100vh; 
+    text-align: center; 
+    background-color: #050505; 
     font-family: 'Times New Roman', serif;
 }
 
 .logo-container { margin-bottom: 30px; margin-top: 60px; }
 
-.main-logo {
-    width: 280px;
-    height: auto;
-    max-width: 80%;
-    border-radius: 50%;
-    box-shadow: 0 0 25px rgba(68, 138, 255, 0.15);
+.main-logo { 
+    width: 280px; 
+    height: auto; 
+    max-width: 80%; 
+    border-radius: 50%; 
+    box-shadow: 0 0 25px rgba(68, 138, 255, 0.15); 
 }
 
-.home-title {
-    font-size: 32px;
-    letter-spacing: 3px;
-    margin-bottom: 5px;
-    color: #fff;
-    text-transform: uppercase;
+.home-title { 
+    font-size: 32px; 
+    letter-spacing: 3px; 
+    margin-bottom: 5px; 
+    color: #fff; 
+    text-transform: uppercase; 
 }
 
-.sub-title {
-    color: #888;
-    font-size: 16px;
-    margin-bottom: 40px;
-    font-style: italic;
-    letter-spacing: 1px;
+.sub-title { 
+    color: #888; 
+    font-size: 16px; 
+    margin-bottom: 40px; 
+    font-style: italic; 
+    letter-spacing: 1px; 
 }
 
 .nav-box { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
 .nav-button {
-    padding: 12px 25px;
-    border: 1px solid #333;
-    background: transparent;
+    padding: 12px 25px; 
+    border: 1px solid #333; 
+    background: transparent; 
     color: #ccc;
-    font-size: 14px;
-    transition: 0.4s;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 14px; 
+    transition: 0.4s; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
     font-family: Arial, sans-serif;
 }
 
-.nav-button:hover {
-    background: #eee;
-    color: #000;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    text-decoration: none;
+.nav-button:hover { 
+    background: #eee; 
+    color: #000; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); 
+    text-decoration: none; 
 }
 
-.footer-note {
-    margin-top: 50px;
-    font-size: 11px;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+.footer-note { 
+    margin-top: 50px; 
+    font-size: 11px; 
+    color: #333; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    margin-bottom: 20px; 
 }
 
-/* =========================================
-   4. BLOGG & NYHETER (Bred layout)
-   ========================================= */
+/* ==========================================================================
+   4. BLOGG / NYHETER (blogg.html)
+   ========================================================================== */
+/* Container för bloggen - Bredare än texten i balken */
 .container {
-    max-width: 900px; /* Bred layout för bloggen */
+    max-width: 900px; 
     margin: 40px auto;
     padding: 0 20px;
 }
 
-h1 {
-    font-size: 32px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+/* Rubriker på bloggen */
+.container h1 { 
+    font-size: 32px; 
+    border-bottom: 1px solid #333; 
+    padding-bottom: 10px; 
+    margin-bottom: 30px; 
 }
 
 .post { margin-bottom: 60px; padding-bottom: 40px; border-bottom: 1px solid #222; }
@@ -151,148 +137,179 @@ h1 {
 .post-date { color: #555; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; }
 .post-image { width: 100%; height: auto; margin: 25px 0; border: 1px solid #333; }
 
-/* Ranking Box */
-.ranking-box {
-    background: #111;
-    border: 1px solid #333;
-    padding: 20px;
-    margin: 25px 0;
-    border-radius: 4px;
+/* Ranking Box Design */
+.ranking-box { 
+    background: #111; 
+    border: 1px solid #333; 
+    padding: 20px; 
+    margin: 25px 0; 
+    border-radius: 4px; 
 }
-.ranking-title {
-    font-weight: bold; color: #fff; margin-bottom: 15px;
-    text-transform: uppercase; font-size: 14px; letter-spacing: 1px;
-    display: block; border-bottom: 1px solid #222; padding-bottom: 8px;
+
+.ranking-title { 
+    font-weight: bold; color: #fff; margin-bottom: 15px; 
+    text-transform: uppercase; font-size: 14px; letter-spacing: 1px; 
+    display: block; border-bottom: 1px solid #222; padding-bottom: 8px; 
 }
+
 .ranking-list { list-style: none; padding: 0; margin: 0; }
 .ranking-item { padding: 10px 0; border-bottom: 1px solid #1a1a1a; display: flex; align-items: center; font-size: 15px; }
 .ranking-item:last-child { border-bottom: none; }
 .rank-num { font-weight: bold; margin-right: 15px; width: 20px; text-align: right; }
 
-.rank-1 { color: #ffd700; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
-.rank-2 { color: #c0c0c0; }
-.rank-3 { color: #cd7f32; }
-.rank-4 { color: #cd7f32; }
+.rank-1 { color: #ffd700; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); } /* Guld */
+.rank-2 { color: #c0c0c0; } /* Silver */
+.rank-3 { color: #cd7f32; } /* Brons */
+.rank-4 { color: #cd7f32; } /* Brons */
 
-/* Video (16:9 Stor) */
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Format */
-    height: 0;
-    overflow: hidden;
-    margin-bottom: 50px;
-    background: #000;
-    border: 1px solid #333;
+/* Video Design (16:9 Widescreen) */
+.video-wrapper { 
+    position: relative; 
+    padding-bottom: 56.25%; 
+    height: 0; 
+    overflow: hidden; 
+    margin-bottom: 50px; 
+    background: #000; 
+    border: 1px solid #333; 
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
-.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-.video-label { font-size: 14px; font-weight: bold; color: #fff; margin-bottom: 10px; display: block; border-left: 3px solid #448aff; padding-left: 10px; margin-top: 30px; }
 
-/* =========================================
-   5. BALKEN (Lagboken - Specifik Layout)
-   ========================================= */
-/* Wrapper för att hantera sidomenyer */
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.video-label { 
+    font-size: 14px; font-weight: bold; color: #fff; 
+    margin-bottom: 10px; display: block; border-left: 3px solid #448aff; 
+    padding-left: 10px; margin-top: 30px; 
+}
+
+/* ==========================================================================
+   5. BALKEN / LAGBOKEN (balken.html) - Special Layout
+   ========================================================================== */
+
+/* Layout-wrapper som håller ihop menyerna och texten */
 .page-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; 
     position: relative;
     width: 100%;
 }
 
-/* Vänster Meny */
+/* Vänster Meny (Innehållsförteckning) */
 .sidebar-left {
     width: 220px;
-    position: fixed;
-    top: 55px; /* Precis under menyn */
+    position: fixed; 
     left: 0;
-    height: calc(100vh - 55px);
+    top: 55px; /* Precis under menyn */
+    bottom: 0;
     background: #000;
     border-right: 1px solid #222;
     padding: 20px;
     font-size: 11px;
     overflow-y: auto;
-    display: none; /* Döljs på mobil */
     z-index: 100;
+    display: none; /* Döljs på mobil */
 }
 
-/* Höger Meny */
+/* Höger Meny (Rättsfall/Referenser) */
 .sidebar-right {
     width: 280px;
-    position: fixed;
+    position: fixed; 
     right: 0;
     top: 55px;
-    height: calc(100vh - 55px);
-    padding: 20px;
-    border-left: 1px solid #222;
+    bottom: 0;
     background: #050505;
-    display: none; /* Döljs på mobil */
+    border-left: 1px solid #222;
+    padding: 20px;
     overflow-y: auto;
     z-index: 100;
+    display: none; /* Döljs på mobil */
 }
 
+/* Mitten-innehållet (Själva lagtexten) */
+.main-content {
+    width: 100%;
+    max-width: 700px; /* Inte bredare än så här för läsbarhet */
+    padding: 40px 20px;
+    box-sizing: border-box;
+    margin: 0 auto; 
+}
+
+/* MEDIA QUERIES FÖR BALKEN (Dator-vy) */
+
+/* Steg 1: När skärmen är bred nog för vänstermenyn */
+@media (min-width: 950px) {
+    .sidebar-left { display: block; }
+    .main-content {
+        margin-left: 240px; /* Flytta texten höger */
+        margin-right: 20px;
+        max-width: 700px; 
+    }
+}
+
+/* Steg 2: När skärmen är bred nog för båda menyerna (Full PC-vy) */
+@media (min-width: 1250px) {
+    .sidebar-right { display: block; }
+    .main-content {
+        margin-left: 240px;  
+        margin-right: 300px; /* Flytta texten från högerkanten */
+        max-width: none; /* Låt texten fylla utrymmet i mitten */
+    }
+}
+
+/* Stil på länkar i menyerna */
 .sidebar-left h2 { font-size: 13px; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
 .sidebar-left a { display: block; color: #888; margin-bottom: 8px; }
 .sidebar-left a:hover { color: #fff; text-decoration: underline; }
 
-/* Huvudinnehållet för Balken */
-.main-content {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    box-sizing: border-box;
-}
-
-/* Media Queries för Balken (Datorvy) */
-@media (min-width: 950px) {
-    .sidebar-left { display: block; }
-    /* När vänster meny syns, knuffa innehållet höger */
-    .main-content { margin-left: 260px; margin-right: 20px; max-width: 600px; }
-}
-
-@media (min-width: 1250px) {
-    .sidebar-right { display: block; }
-    /* När båda menyer syns, centrera innehållet mellan dem */
-    .main-content { margin-left: 260px; margin-right: 320px; max-width: auto; }
-}
-
-/* Lagtext Styling */
+/* STYLING AV LAGTEXTEN (Paragrafer, boxar etc) */
 .abbr { color: #666; font-size: 14px; margin-bottom: 30px; }
 .meta { font-size: 12px; color: #888; margin-bottom: 20px; }
 .meta b { color: #aaa; width: 100px; display: inline-block; }
 
-.yellow-box {
-    background: #fff9c4;
-    color: #000;
-    padding: 15px;
-    margin-bottom: 30px;
-    font-size: 13px;
-    border-left: 5px solid #f1c40f;
+.yellow-box { 
+    background: #fff9c4; 
+    color: #000; 
+    padding: 15px; 
+    margin-bottom: 30px; 
+    font-size: 13px; 
+    border-left: 5px solid #f1c40f; 
 }
 
-h2.kapitel-rubrik {
-    border-top: 1px solid #333;
-    padding-top: 30px;
-    margin-top: 50px;
-    color: #fff;
-    font-size: 20px;
+h2.kapitel-rubrik { 
+    border-top: 1px solid #333; 
+    padding-top: 30px; 
+    margin-top: 50px; 
+    color: #fff; 
+    font-size: 20px; 
 }
 
 .paragraf { margin-bottom: 25px; line-height: 1.7; }
 .paragraf-nr { font-weight: bold; color: #fff; margin-right: 10px; }
 .stycke { display: block; margin-top: 10px; margin-left: 35px; color: #bbb; }
 
-.principer {
-    border: 1px solid #444;
-    padding: 15px;
-    margin-bottom: 30px;
-    font-style: italic;
-    font-size: 13px;
-    color: #aaa;
-    background: #080808;
+.principer { 
+    border: 1px solid #444; 
+    padding: 15px; 
+    margin-bottom: 30px; 
+    font-style: italic; 
+    font-size: 13px; 
+    color: #aaa; 
+    background: #080808; 
 }
 
-.ref-box { border: 1px solid #333; background: #111; margin-bottom: 20px; font-size: 11px; padding: 10px; }
-.ref-header { font-weight: bold; color: #fff; margin-bottom: 5px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+/* Referensboxar i högermenyn */
+.ref-box { 
+    border: 1px solid #333; 
+    background: #111; 
+    margin-bottom: 20px; 
+    font-size: 11px; 
+    padding: 10px; 
+}
+.ref-header { 
+    font-weight: bold; 
+    color: #fff; 
+    margin-bottom: 5px; 
+    border-bottom: 1px solid #333; 
+    padding-bottom: 5px; 
+}
 .ref-content { color: #bbb; line-height: 1.4; }
 .ref-content a { display: block; margin-top: 8px; font-weight: bold; }
