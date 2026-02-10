@@ -127,7 +127,7 @@
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                 const currentVal = Math.floor(progress * (end - start) + start);
-                obj.innerHTML = "$" + currentVal.toLocaleString('sv-SE');
+                obj.innerHTML = "SEK " + currentVal.toLocaleString('sv-SE');
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
                 }
@@ -137,7 +137,7 @@
 
         const obj = document.getElementById("counter");
         // Startar animationen (från 0 till targetAmount under 2 sekunder)
-        animateValue(obj, 0, targetAmount, 2000);
+        animateValue(obj, 0, targetAmount, 545);
     </script>
 
 </body>
