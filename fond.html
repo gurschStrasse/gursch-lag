@@ -134,7 +134,7 @@
 
         <div class="debt-display">
             <div class="debt-label">Totalbalans</div>
-            <div class="amount" id="counter">SEK0</div>
+            <div class="amount" id="counter">SEK  0</div>
         </div>
 
         <div class="comparison-grid">
@@ -170,7 +170,7 @@
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                 const currentVal = Math.floor(progress * (end - start) + start);
-                obj.innerHTML = "SEK" + currentVal.toLocaleString('sv-SE');
+                obj.innerHTML = "SEK  " + currentVal.toLocaleString('sv-SE');
                 if (progress < 1) window.requestAnimationFrame(step);
             };
             window.requestAnimationFrame(step);
